@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eri Auto Trading: Windscreens, Car Parts, and Vehicle Maintenance">
+    <title>Eri Auto Trading</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #c2e3f7;
+            color: #333;
+        }
+
+        header {
+            background-color: #01a2ff; /* Dark Blue */
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #faa404; /* Orange */
+            padding: 15px;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #003366; /* Dark Blue Hover */
+            padding: 10px 30px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service,
+        .product {
+            background-color: #f5e3b5;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap; /* Allows wrapping for smaller screens */
+            transition: transform 0.2s ease; /* Add transition for the service and product boxes */
+        }
+
+        .service:hover,
+        .product:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+        }
+
+        .service img,
+        .product img {
+            width: 40%;
+            border-radius: 10px;
+            margin-right: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service img:hover,
+        .product img:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Deepen shadow on hover */
+        }
+
+        .service div,
+        .product div {
+            flex: 1;
+        }
+
+        .cta-button {
+            background-color: #FFA500;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #e69500;
+            transition: background-color 0.3s;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        footer ul li a {
+            color: #FFA500;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact section */
+        #contact {
+            text-align: center;
+            background-color: #f7e0a4;
+            padding: 40px 20px;
+        }
+
+        #contact ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        #contact ul li {
+            margin: 10px 0;
+        }
+
+        /* Home Page Section */
+        #home {
+            background-color: #f1f1f1;
+            padding: 100px 20px;
+            text-align: center;
+            background-image: url('home.jpeg');
+            background-size: cover;
+            color: rgb(8, 1, 46);
+        }
+
+        #home h2 {
+            font-size: 3rem;
+            color: rgb(8, 1, 46);
+        }
+
+        #home p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p,
+            nav a,
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .service img,
+            .product img {
+                width: 100%; /* Full width on smaller screens */
+                margin-right: 0; /* Remove right margin */
+                margin-bottom: 15px; /* Space below images */
+            }
+
+            .service,
+            .product {
+                flex-direction: column; /* Stack items vertically */
+                align-items: flex-start; /* Align items to the start */
+            }
+
+            .cta-button {
+                padding: 10px 20px; /* Smaller buttons on mobile */
+                font-size: 1rem; /* Adjust font size */
+            }
+
+            footer ul li {
+                display: block; /* Stack footer links vertically */
+                margin: 5px 0; /* Space between footer links */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Eri Auto Trading</h1>
+        <p>Windscreens, Car Parts, and Vehicle Maintenance</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#products">Car Parts</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home">
+            <h2>Welcome to Eri Auto Trading</h2>
+            <p>Your one-stop solution for high-quality windscreen replacements, car parts, and expert vehicle maintenance. We're dedicated to keeping you on the road safely and affordably.</p>
+            <a href="#services" class="cta-button">Explore Our Services</a>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Our Services</h2>
+
+            <div class="service">
+                <img src="Windscreen Services.jpeg" alt="Windscreen Services">
+                <div>
+                    <h3>Windscreen Services</h3>
+                    <p>We specialize in high-quality windscreen repairs and replacements, ensuring your safety and peace of mind on the road.</p>
+                    <a href="#contact" class="cta-button">Get a Quote</a>
+                </div>
+            </div>
+
+            <div class="service">
+                <img src="Car Parts Sales.jpeg" alt="Car Parts Sales">
+                <div>
+                    <h3>Car Parts Sales</h3>
+                    <p>Find the best car parts for your vehicle, including engine components, body parts, and electrical systems. We stock parts for all major brands.</p>
+                    <a href="#contact" class="cta-button">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service">
+                <img src="Vehicle Maintenance & Repairs.jpeg" alt="Vehicle Maintenance & Repairs">
+                <div>
+                    <h3>Vehicle Maintenance & Repairs</h3>
+                    <p>Ensure your car stays in top condition with our expert maintenance and repair services. From oil changes to diagnostics, we’ve got you covered.</p>
+                    <a href="#contact" class="cta-button">Book a Service</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products">
+            <h2>Car Parts Shop</h2>
+
+            <div class="product">
+                <img src="Car Parts Sales.jpeg" alt="Engine Parts">
+                <div>
+                    <h3>Engine Parts</h3>
+                    <p>We provide durable, reliable engine parts to keep your vehicle running smoothly. Contact us to check availability.</p>
+                    <a href="#contact" class="cta-button">Shop Now</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="Car-Body-Parts.jpg" alt="Body Parts">
+                <div>
+                    <h3>Body Parts</h3>
+                    <p>Find high-quality body parts for all makes and models. Our parts are sourced from trusted manufacturers.</p>
+                    <a href="#contact" class="cta-button">Shop Now</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="e.jpeg" alt="Electrical Parts">
+                <div>
+                    <h3>Electrical Parts</h3>
+                    <p>Explore our extensive range of electrical parts to keep your vehicle’s systems functioning optimally.</p>
+                    <a href="#contact" class="cta-button">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <ul>
+                <li>Phone: 063-500-3307</li>
+                <li>WhatsApp: 063-500-3307</li>
+                <li>Email: eriautotrading@gmail.com</li>
+                <li>Address: Pretoria, South Africa</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Eri Auto Trading. All rights reserved.</p>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </footer>
+
+</body>
+
+</html>
